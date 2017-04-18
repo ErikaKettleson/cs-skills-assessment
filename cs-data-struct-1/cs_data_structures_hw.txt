@@ -1,0 +1,70 @@
+Part 1: Discussion Questions
+
+Make a new file and add your answers to the questions below. Push the file to your github repository along with the other solutions.
+
+Runtime
+
+1. When calculating the Big O notation for a particular algorithm, it’s necessary to consider the length of time it takes for the algorithm to run as the algorithm’s workload approaches infinity. You can think of the workload as the number of tasks required to complete a job. What determines the workload of figuring out whether your box of animal crackers contains an elephant?
+    You'd have to check every cracker, so O(n)
+
+2. Order the following runtimes in descending order of efficiency (that is, fastest runtimes first, slowest last) as n approaches infinity:
+
+O(1)
+O(log n)
+O(n) & O(2n)
+O(n log n)
+O(n2)
+
+Stacks and Queues
+
+1. In the following cases, would a stack or queue be a more appropriate data structure?
+    1. The process of loading and unloading pallets onto a flatbed truck
+        This is a stack, add to top, pop off top. 
+    2. Putting bottle caps on bottles of beer as they roll down an assembly line
+        This is a queue, add to end, pop off top. 
+    3. Calculating the solution to this mathematical expression: 2 + (7 * 4) - (3 / 2)
+        This is a stack, you do a calculation & then have to keep popping until stack is empty.  
+2. Describe two more situations where a queue would be an appropriate data structure.
+    1. Queue is best for loading sequential jobs like a printer or fax machine.
+    2. Queue could also be used for a billing system where oldest projects get billed first. 
+3. Describe two more situations where a stack would be an appropriate data structure.
+    1. Stack appropriate for "undo/back" button fxns in programs like word or photoshop.
+    2. Stacks also appropriate for calling functions - so it will pause and execute new command.
+
+Linked Lists
+
+1. Given the linked list below, which are the nodes? What is the data for each node? Where is the head? Where is the tail? (Please be as specific as possible — exactly which parts of the diagram correspond to each part? Arrows? Boxes? Text?)
+NODES: "apple", "berry", "cherry" - the text is the 'data'
+HEAD: "apple"
+TAIL: "cherry" (its' next reference points to None)
+ARROWS: indicate 'next' references
+
+2. What’s the difference between doubly- and singly-linked lists?
+    They are bi-directional (the parent always knows child, but in dbl the child knows its parent as well)
+3. Why is it faster to append to a linked list if we keep track of the tail as an attribute?
+    If you can redraw the tail pointer you don't have to rearrange everything in the list in order to add to it. 
+
+Trees
+
+1. Given the tree above, in what order would a Breadth First Search (BFS) algorithm visit each node until finding burritos (starting at food)? Just list the order of nodes visited; no need to recreate the state of the algorithm data in your answer.
+    1. FOOD
+    2. ITALIAN, INDIAN, MEXICAN
+    3. pop off italian, add lasagna & pizza
+    4. INDIAN, MEXICAN, lasagna, pizza
+    5. pop off indian, add tikka masala, saag
+    6. MEXICAN, lasagna, pizza, tikka masala, saag
+    7. pop off mexican, add burritos, tacos, enchiladas
+    8. lasagna, pizza, tikka masala, saag, BURRITOS, tacos, enchiladas
+    9. keep popping these foods (4x)
+    9. !!%**burritos**%!!
+2. Given the tree above, in what order would a Depth First Search (DFS) algorithm visit each node until finding Chicago-style (starting at food)? Just list the order of nodes visited; no need to recreate the state of the algorithm data in your answer.
+    search children of current node before checking next sibling so...
+    1. FOOD
+    2. ITALIAN, INDIAN, MEXICAN
+    3. pop mexican, add burritos, tacos, enchiladas
+    4. ITALIAN, INDIAN, burritos, tacos, enchiladas
+    5. pop enchiladas, then pop those tacos
+    6. !!%**burritos**%!!
+3. How is a binary search tree different from other trees?
+    binary trees have more rules. they need 2 children per node. You should really balance them.
+
